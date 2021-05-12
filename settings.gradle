@@ -1,0 +1,3 @@
+rootProject.name = "BaseKt"
+include ':app'
+include ':baseLibrary'
