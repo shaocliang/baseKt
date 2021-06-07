@@ -23,4 +23,11 @@
         android:text="跳转"
         app:layout_constraintTop_toBottomOf="@id/text" />
 
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="弹窗"
+        app:layout_constraintTop_toBottomOf="@id/button"
+        android:id="@+id/btn1"/>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -20,6 +20,10 @@ class MainActivity : BaseActivity() {
         viewBind.button.setOnClickListener {
             TestActivity.jumpTo(mContext)
         }
+
+        viewBind.btn1.setOnClickListener {
+            TestDialog.newInstance().show(supportFragmentManager)
+        }
     }
 
     override fun createObserver() {
