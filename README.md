@@ -15,4 +15,4 @@ allprojects {
 ```
 
   
-  Tag:版版本号 1.0.0
+  Tag:版版本号
