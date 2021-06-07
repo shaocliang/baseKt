@@ -26,7 +26,9 @@ class TestActivity : BaseActivity() {
     override fun attachLayoutView(): View = viewBinding.root
 
     override fun onInitView() {
-
+        supportFragmentManager.beginTransaction()
+            .add(R.id.fragment, MainFragment())
+            .commit()
     }
 
     override fun createObserver() {
