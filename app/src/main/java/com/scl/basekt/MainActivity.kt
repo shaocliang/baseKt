@@ -1,12 +1,17 @@
 package com.scl.basekt
 
+import android.util.Log
 import android.view.View
 import com.scl.basekt.databinding.ActivityMainBinding
+import com.scl.basekt.test.InfoViewModel
 import com.scl.baselibrary.base.BaseActivity
 import org.greenrobot.eventbus.EventBus
+import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class MainActivity : BaseActivity() {
 
+
+    private val mViewModel by viewModel<InfoViewModel>()
 
     private val viewBind by lazy {
         ActivityMainBinding.inflate(layoutInflater)
@@ -24,9 +29,23 @@ class MainActivity : BaseActivity() {
         viewBind.btn1.setOnClickListener {
             TestDialog.newInstance().show(supportFragmentManager)
         }
+
+        viewBind.btn2.setOnClickListener {
+            mViewModel.getInfo()
+        }
     }
 
     override fun createObserver() {
+
+        mViewModel.mLoadingViewEvent.observe(this, {
+            it.successData?.run {
+              Log.d("初始化信息","成功")
+            }
+
+            it.showError?.let {
+                Log.d("初始化信息","失败")
+            }
+        })
     }
 
     /**

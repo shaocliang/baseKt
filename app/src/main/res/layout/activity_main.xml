@@ -24,10 +24,17 @@
         app:layout_constraintTop_toBottomOf="@id/text" />
 
     <Button
+        android:id="@+id/btn1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="弹窗"
-        app:layout_constraintTop_toBottomOf="@id/button"
-        android:id="@+id/btn1"/>
+        app:layout_constraintTop_toBottomOf="@id/button" />
+
+    <Button
+        android:id="@+id/btn2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="测试接口"
+        app:layout_constraintTop_toBottomOf="@id/btn1" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
