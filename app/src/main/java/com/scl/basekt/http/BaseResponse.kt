@@ -10,11 +10,12 @@ data class BaseResponse<T>(
     var code: Int = -1, val msg: String, val data: T
 ) : IResponseEntity<T> {
 
-    val message: String = msg
+//    val message: String = msg
 
     /*处理空数据*/
 //    fun getEntity(): T = data
 
+    /*成功code值 要根据具体后台返回值来判断*/
     override fun succeed(): Boolean = code == 0
 
     override fun code(): Int = code
