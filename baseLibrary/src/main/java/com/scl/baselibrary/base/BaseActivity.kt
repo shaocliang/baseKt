@@ -119,12 +119,21 @@ abstract class BaseActivity : AppCompatActivity(), IView, IBaseView, ILoadingVie
      */
     override fun showToast(msg: String) {}
 
+    /**
+     * 自定义开启加载框
+     *  只需要在baseActivity重写即可 不需要BaseFragment中重写
+     */
     override fun showLoading(msg: String?) {}
 
     override fun showLoading(msgResId: Int) {}
 
+    /**
+     * 自定义关闭加载框
+     *  只需要在baseActivity重写即可 不需要BaseFragment中重写
+     */
     override fun closeLoading() {}
 
+    /*无用*/
     override fun onLoading(isLoading: Boolean) {
         if (isLoading) {
             showLoading()
