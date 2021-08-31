@@ -19,12 +19,18 @@ abstract class BaseFragment : Fragment(), IView, IBaseView, ILoadingView {
     var isFirst: Boolean = true
         private set
 
+    /*自定义titleBar的View*/
     override var titleBar: View? = null
+
+    /*是否开启沉浸式状态栏*/
     override var usedImmersionBar: Boolean = false
     override var usedStatusBarDarkFont: Boolean = false
+
+    /*是否开启本页面 eventBus*/
     override var usedEventBus: Boolean = false
+
+    /*上下文*/
     override lateinit var mContext: AppCompatActivity
-    override var cancelable: Boolean = true
 
 
     override fun onAttach(context: Context) {
